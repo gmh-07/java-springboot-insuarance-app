@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Policies</title>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Available Policies</h1>
+
+    <div
+            th:each="policy : ${policies}"
+            class="policy-card"
+    >
+
+        <h2 th:text="${policy.policyName}"></h2>
+
+        <p th:text="${policy.description}"></p>
+
+        <p>
+            Premium:
+            <span th:text="${policy.premiumAmount}"></span>
+        </p>
+
+        <p>
+            Duration:
+            <span th:text="${policy.duration}"></span>
+            Years
+        </p>
+
+        <p>
+            Type:
+            <span th:text="${policy.type}"></span>
+        </p>
+
+        <a
+                th:href="@{'/purchase/' + ${policy.id}}"
+        >
+            Purchase
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

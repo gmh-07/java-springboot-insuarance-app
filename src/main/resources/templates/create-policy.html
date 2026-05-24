@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create Policy</title>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Create Policy</h1>
+
+    <form
+            method="post"
+            action="/agent/create-policy"
+    >
+
+        <input
+                type="text"
+                name="policyName"
+                placeholder="Policy Name"
+                required
+        >
+
+        <input
+                type="text"
+                name="description"
+                placeholder="Description"
+                required
+        >
+
+        <input
+                type="number"
+                name="premiumAmount"
+                placeholder="Premium Amount"
+                required
+        >
+
+        <input
+                type="number"
+                name="duration"
+                placeholder="Duration"
+                required
+        >
+
+        <input
+                type="text"
+                name="type"
+                placeholder="Policy Type"
+                required
+        >
+
+        <button type="submit">
+            Create Policy
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
